@@ -10,6 +10,6 @@ include(SHARED_PATH . '/salamanderHeader.php');
 
 <a href="<?= url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
 
-Page ID: <?= h($id); ?>
+<p> Page ID: <?= h($id); ?> </p>
 
 <?php include(SHARED_PATH . '/salamanderFooter.php'); ?>
