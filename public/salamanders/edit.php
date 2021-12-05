@@ -1,23 +1,23 @@
 <?php require_once('../../private/initialize.php');
 
 if(!isset($_GET['id'])) {
-  redirect_to(url_for('/staff/subjects/index.php'));
+  redirect_to(url_for('index.php'));
 }
 $id = $_GET['id'];
-$salamanderName = '';
-$position = '';
-$visible = '';  
+$subject = find_salamander_by_id($id);
+
+
 
 if(is_post_request()) {
 
   // Handle form values sent by new.php
 
-  $menu_name = $_POST['salamanderName'] ?? '';
-  $position = $_POST['position'] ?? '';
-  $visible = $_POST['visible'] ?? '';
+  $name = $_POST['name'] ?? '';
+  $habitat = $_POST['habitat'] ?? '';
+  $description = $_POST['description'] ?? '';
 
   echo "Form parameters<br />";
-  echo "Salamander name: " . $salamanderName . "<br />";
+  echo "Salamander name: "'" . $salamanderName . "'";
 }
 
 ?>
@@ -35,7 +35,15 @@ if(is_post_request()) {
         <dt>Name</dt>
         <dd><input type="text" name="salamanderName" value="" /></dd>
       </dl>
-      
+      <dl>
+      <dl>
+        <dt>Habitat</dt>
+        <dd><textarea name ="habitat" rows="4" cols="75"></textarea></dd>
+      </dl>
+      <dl>
+        <dt>Description</dt>
+        <dd><textarea name = "habitat" rows="4" cols ="75"></textarea></dd>
+      </dl>
         <input type="submit" value="Edit Salamander" />
     </form>
 
