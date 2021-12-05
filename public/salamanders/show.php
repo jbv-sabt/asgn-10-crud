@@ -25,7 +25,7 @@ include(SHARED_PATH . '/salamanderHeader.php');
         <dd><?= h($salamander['habitat']);?></dd>
     </dl>
     <dl>
-        <dt>description</dt>
+        <dt>Description</dt>
         <dd><?= h($salamander['description']);?></dd>
     </dl>
 </div>
