@@ -40,7 +40,7 @@ function insert_salamander($name, $habitat, $description){
     else {
     //insert failed
     echo mysqli_error($db);
-    db_disconnect($db)
+    db_disconnect($db);
     exit();
     }
 }
