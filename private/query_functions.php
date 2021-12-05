@@ -29,7 +29,7 @@ function insert_salamander($name, $habitat, $description){
     $sql .= "VALUES (";
     $sql .= "'" .  $name . "',";
     $sql .= "'" . $habitat . "',";
-    $sql .= "." . $description . "'";
+    $sql .= "'" . $description . "'";
     $sql .= ")";
 
     $result = mysqli_query($db, $sql);
