@@ -11,7 +11,7 @@ include(SHARED_PATH . '/salamanderHeader.php');
     <form action="<?= url_for('salamanders/create.php'); ?>" method="post">
       <dl>
         <dt>Salamander Name</dt>
-        <dd><input type="text" name="salamanderName" value="" /></dd>
+        <dd><input type="text" name="name" value="" /></dd>
       </dl>
       <dl>
         <dt>Habitat</dt>
