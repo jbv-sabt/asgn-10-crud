@@ -1,9 +1,12 @@
 <?php 
 require_once('../../private/initialize.php');
 
-// $id = isset($_GET['id']) ? $_GET['id'] : '1';
-$id = $_GET['id'] ?? '1'; // PHP > 7.0
+ //$id = isset($_GET['id']) ? $_get['id'] : '1';
+
+$id = $_GET['id'] ?? $id; // PHP > 7.0
+
 $salamander = find_salamander_by_id($id);
+
 
 $page_title = 'View Salamander';
 include(SHARED_PATH . '/salamanderHeader.php'); 
@@ -15,7 +18,8 @@ include(SHARED_PATH . '/salamanderHeader.php');
     <h1>Salamander Stats</h1>
     <dl>
         <dt>ID</dt>
-        <dt><?= h($salamander['id']);?></dd>
+        <dd><?= h($salamander['id'];)?></dd>
+    </dl>
     <dl>
         <dt>Salamander Name</dt>
         <dd><?= h($salamander['name']);?></dd>

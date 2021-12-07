@@ -16,6 +16,8 @@ if(is_post_request()) {
   
   echo "Form parameters<br />";
   echo "Salamander name: " . $name . "<br />";
+  echo "Habitat: " .$habitat . "<br/>";
+
 } else {
   redirect_to(url_for('salamanders/new.php'));
 }
