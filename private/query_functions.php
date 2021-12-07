@@ -19,6 +19,7 @@ function find_salamander_by_id($id) {
     $salamander = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
     return $salamander; //returns assoc array
+
    
 }
 
@@ -36,7 +37,7 @@ function insert_salamander($name, $habitat, $description){
     $result = mysqli_query($db, $sql);
     //for insert statements, $result returns t/f
     if($result) {
-        return true;
+        return $result;
     }
     else {
     //insert failed
@@ -58,10 +59,12 @@ function update_salamander($salamander) {
     $sql .= "LIMIT 1";
     
     $result = mysqli_query($db,$sql);
+    $id = $salamander['id'];
+   
     // FOR update statements, $result is t/f
     
-
     if($result) {
+        
         redirect_to(h(url_for('/salamanders/show.php?id=' . $id)));
        
     }
